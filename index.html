@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <title>MP Ehitustööd — Kodud, mille juurde naastakse</title>
 <meta name="description" content="Premium võtmed-kätte ehitus, terviklik renoveerimine ja restaureerimine Pärnumaal. Ühe meistri vastutusel.">
-<meta name="theme-color" content="#13203C">
+<meta name="theme-color" content="#14213D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,11 +15,11 @@
     --paper:#ECEDF0;        /* cool stone off-white */
     --paper-2:#E2E4EA;      /* deeper stone — contact */
     --ink:#0E1A30;          /* near-black navy — dark sections + headings */
-    --navy:#13203C;         /* MP brand navy (logo) */
+    --navy:#14213D;         /* MP brand navy (Elementori Põhivärv / pusade sini) */
     --ink-soft:#46506A;     /* cool slate body text */
-    --gold:#B0833F;         /* metallic accent — display / decorative */
-    --gold-bright:#C9A24E;  /* accent on dark backgrounds */
-    --gold-deep:#876226;    /* accent for small text on light (AA) */
+    --gold:#C9A24E;         /* heledam metallik-kuld — display / dekoratiivne / graafika */
+    --gold-bright:#DCC074;  /* hele kuld tumedal taustal (särab) */
+    --gold-deep:#8A6A1F;    /* kuld väiksele tekstile + numbritele heledal (AA) */
     --line:rgba(14,26,48,.16);
     --line-soft:rgba(14,26,48,.075);
     --shadow:38px 60px 90px -50px rgba(14,26,48,.55);
@@ -58,7 +58,7 @@
   .display{font-family:"Fraunces",serif;font-optical-sizing:auto;color:var(--ink);font-weight:380;line-height:.94;letter-spacing:-.025em}
   .eyebrow{font-family:"Hanken Grotesk";font-size:.72rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);display:inline-flex;align-items:center;gap:.85em}
   .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold-deep);display:inline-block}
-  .em{font-style:italic;color:#A87A39;font-weight:340}
+  .em{font-style:italic;color:var(--gold-deep);font-weight:340}
   .ink{color:var(--ink)}
 
   /* ---------- layout ---------- */
@@ -70,7 +70,7 @@
     display:flex;align-items:center;justify-content:space-between;
     padding:20px clamp(20px,5vw,80px);
     color:var(--paper);transition:padding .4s var(--ease),background .5s var(--ease),box-shadow .5s var(--ease)}
-  nav.scrolled{padding:12px clamp(20px,5vw,80px);background:rgba(19,32,60,.9);
+  nav.scrolled{padding:12px clamp(20px,5vw,80px);background:rgba(20,33,61,.9);
     -webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25);
     box-shadow:0 1px 0 rgba(236,237,240,.08),0 18px 40px -30px rgba(6,11,24,.7)}
   .brand-logo{height:clamp(38px,4.2vw,50px);width:auto}
@@ -143,7 +143,7 @@
   .stat:nth-child(2n){border-right:0}
   @media(min-width:760px){.stat:nth-child(2n){border-right:1px solid var(--line)}.stat:nth-child(4){border-right:0}}
   .stat .n{font-family:"Fraunces";font-size:clamp(3rem,6vw,5.4rem);color:var(--ink);line-height:.9;letter-spacing:-.03em;font-weight:340}
-  .stat .n em{font-style:italic;color:var(--gold)}
+  .stat .n em{font-style:italic;color:var(--gold-deep)}
   .stat .k{margin-top:.7em;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
   .stat-unit{font-size:.6em;vertical-align:.12em;letter-spacing:-.01em;margin-left:.04em}
 
@@ -208,7 +208,7 @@
     column-gap:clamp(14px,4vw,26px);align-items:baseline;
     padding:clamp(28px,4vh,48px) 0;border-top:1px solid var(--line)}
   .aitem:last-child{border-bottom:1px solid var(--line)}
-  .aitem .num{grid-area:num;font-family:"Fraunces";font-size:clamp(1.6rem,2.5vw,2.4rem);color:var(--gold);font-weight:340}
+  .aitem .num{grid-area:num;font-family:"Fraunces";font-size:clamp(1.6rem,2.5vw,2.4rem);color:var(--gold-deep);font-weight:340}
   .aitem h4{grid-area:title;font-family:"Fraunces";color:var(--ink);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:380;letter-spacing:-.02em;line-height:1.05}
   .aitem .txt{grid-area:txt;max-width:52ch;margin-top:.9em}
   @media(min-width:760px){.aitem{grid-template-columns:auto 22ch 1fr;grid-template-areas:"num title txt";align-items:start;column-gap:clamp(22px,4vw,70px)}.aitem .txt{margin-top:.2em}}
