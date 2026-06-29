@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>MP Ehitustööd — internetinähtavuse test (29.06.2026)</title>
+<style>
+  :root{
+    --navy:#14213D; --navy-2:#1d2f54; --gold:#B0833F; --gold-deep:#8a6420;
+    --ink:#1c1c1c; --muted:#5a5f6a; --bg:#ffffff; --bg-soft:#f6f5f2;
+    --line:#e4e1da; --bad:#b23b3b; --good:#2f7d4f;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg-soft); color:var(--ink);
+    font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:0 22px 90px}
+  header.hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);
+    color:#fff; padding:54px 0 46px; margin-bottom:36px;
+    border-bottom:4px solid var(--gold);
+  }
+  header.hero .wrap{padding-bottom:0}
+  .kicker{color:var(--gold); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:13px; margin:0 0 14px}
+  h1{font-size:33px; line-height:1.18; margin:0 0 14px; font-weight:800}
+  header.hero p{color:#d7dce6; font-size:17px; margin:0; max-width:640px}
+  .meta{margin-top:22px; font-size:13.5px; color:#9fb0c9}
+  h2{
+    font-size:23px; color:var(--navy); margin:48px 0 10px; font-weight:800;
+    padding-bottom:9px; border-bottom:2px solid var(--line);
+  }
+  h2 .num{color:var(--gold); font-weight:800; margin-right:8px}
+  h3{font-size:18px; color:var(--navy); margin:26px 0 6px; font-weight:700}
+  p{margin:10px 0}
+  a{color:var(--gold-deep)}
+  strong{color:var(--navy)}
+  .lead{font-size:18.5px}
+  .card{
+    background:var(--bg); border:1px solid var(--line); border-radius:12px;
+    padding:22px 24px; margin:18px 0; box-shadow:0 1px 2px rgba(20,33,61,.04);
+  }
+  .tldr{border-left:5px solid var(--gold); background:#fff}
+  .tldr ul{margin:8px 0 0; padding-left:20px}
+  .tldr li{margin:7px 0}
+  table{width:100%; border-collapse:collapse; margin:16px 0; font-size:15.5px; background:#fff}
+  caption{caption-side:top; text-align:left; color:var(--muted); font-size:13.5px; margin-bottom:7px}
+  th,td{text-align:left; padding:11px 13px; border-bottom:1px solid var(--line); vertical-align:top}
+  thead th{background:var(--navy); color:#fff; font-weight:700; font-size:14px}
+  tbody tr:nth-child(even){background:var(--bg-soft)}
+  .bad{color:var(--bad); font-weight:700}
+  .good{color:var(--good); font-weight:700}
+  .win{color:var(--gold-deep); font-weight:700}
+  .big-stat{display:flex; gap:18px; flex-wrap:wrap; margin:18px 0}
+  .stat{flex:1 1 150px; background:#fff; border:1px solid var(--line); border-top:3px solid var(--gold); border-radius:10px; padding:16px 18px}
+  .stat .n{font-size:30px; font-weight:800; color:var(--navy); line-height:1}
+  .stat .l{font-size:13px; color:var(--muted); margin-top:6px}
+  blockquote{
+    margin:16px 0; padding:14px 20px; background:#fff; border-left:4px solid var(--gold);
+    color:var(--navy); font-style:italic; border-radius:0 8px 8px 0;
+  }
+  .quote-ai{background:#fbf8f2}
+  .callout{background:var(--navy); color:#fff; border-radius:12px; padding:22px 24px; margin:22px 0}
+  .callout h3{color:#fff; margin-top:0}
+  .callout strong{color:var(--gold)}
+  .check{list-style:none; padding:0; margin:10px 0}
+  .check li{padding:7px 0 7px 30px; position:relative; border-bottom:1px solid var(--line)}
+  .check li:before{content:"✓"; position:absolute; left:0; top:7px; color:var(--gold-deep); font-weight:800}
+  .x li:before{content:"✕"; color:var(--bad)}
+  .note{font-size:14px; color:var(--muted); background:#fff; border:1px dashed var(--line); border-radius:8px; padding:12px 16px; margin:14px 0}
+  footer{margin-top:46px; padding-top:20px; border-top:2px solid var(--line); color:var(--muted); font-size:13.5px}
+  @media print{
+    body{background:#fff}
+    header.hero{background:var(--navy)!important; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .card,.stat,thead th,.callout{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  }
+  @media(max-width:560px){h1{font-size:26px} body{font-size:16px} th,td{padding:9px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">MP Ehitustööd · Sisedokument</p>
+    <h1>Miks mpehitus.ee't ei leita — ja mis seda muudab</h1>
+    <p>Päris test sinu internetinähtavusest: mida näeb klient täna Google'is, Bingis ja AI-vestlustes, kui ta otsib ehitajat Pärnus. Kõik numbrid on päriselt mõõdetud, mitte arvamus.</p>
+    <p class="meta">Test tehtud 29.06.2026 · Eesti asukoht, isikupärastamine välja lülitatud (nii nagu näeb võõras klient)</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="card tldr">
+    <h3 style="margin-top:0">Lühidalt — kolm lauset</h3>
+    <ul>
+      <li><strong>Sind leiab ainult see, kes su nime juba teab.</strong> Iga päris teenuse-otsingu peale (korteriremont, vannituba, suvila, ehitusfirma Pärnu) oled sa Google'is ja Bingis <span class="bad">nähtamatu</span> — ka AI ei soovita sind.</li>
+      <li><strong>Ehituskutt — väiksem ja uuem firma kui sina — on "korteri remont Pärnu" peal #1.</strong> Vahe pole oskuses. Vahe on selles, et tema leht on kirjutatud nende sõnadega, mida klient otsib.</li>
+      <li><strong>Sul on peidetud trump: 10+ aastat kogemust.</strong> See on praegu peidus, lehel kasutamata — ja seda parandadagi ongi mõte.</li>
+    </ul>
+  </div>
+
+  <p class="lead">Sa ütlesid õigesti: <em>visuaal on suva</em>. Selles oleme nõus — see test ei räägi sõnagi sellest, kas leht on kuldne või hall. See räägib ainult ühest asjast: <strong>kas sind leitakse, kui klient otsib.</strong></p>
+
+  <!-- ===== TEST 1 ===== -->
+  <h2><span class="num">1.</span>Google Search Console — su päris liiklus</h2>
+  <p>See on Google'i ametlik tööriist, mis näitab, kui mitu korda su lehte otsingus näidati ja kui mitu korda sellele klõpsati. Numbrid kogu saadaoleva aja kohta:</p>
+
+  <div class="big-stat">
+    <div class="stat"><div class="n">2</div><div class="l">klikki kokku</div></div>
+    <div class="stat"><div class="n">9</div><div class="l">näitamist otsingus</div></div>
+    <div class="stat"><div class="n">7,7</div><div class="l">keskmine positsioon</div></div>
+    <div class="stat"><div class="n">1</div><div class="l">nähtav päring ("ehitustööd", 0 klikki)</div></div>
+  </div>
+
+  <p>Kaks klikki. Ja needki tulid päringutelt, mida Google ei näita (ta peidab haruldased ja brändipäringud) — see tähendab, et klikkija <strong>otsis su nime või "mp ehitus"</strong>, ehk teadis sind juba ette. <strong>Uut klienti, kes leidis su teenust otsides üles, on praktiliselt null.</strong></p>
+
+  <div class="note"><strong>Aus täpsustus:</strong> see tööriist lisati su lehele alles 23.06.2026, nii et andmeid on vaid ~nädala jagu ja vana ajalugu siia tagasi ei tule. Aga see on hea — kuna lehemuudatused pole veel tehtud, ongi see null-lugem meie <strong>puhas "enne"-pilt</strong>. Pärast muudatusi näeme tõusu mustvalgelt.</div>
+
+  <!-- ===== TEST 2 ===== -->
+  <h2><span class="num">2.</span>Mida näeb klient, kui ta Google'isse trükib</h2>
+  <p>Otsisin täpselt need sõnad, mida pärnakas päriselt otsib. Vaatasin esimese ~20 tulemuse hulgast, kas MP on seal.</p>
+
+  <table>
+    <caption>Google, 29.06.2026 — Eesti asukoht, isikupärastamine väljas</caption>
+    <thead>
+      <tr><th>Mida klient trükib</th><th>MP koht</th><th>Kes võidab</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ehitusfirma Pärnu</td><td class="bad">puudub</td><td>Pärnumaa Ehitus, Merlang (kaart + tulemused)</td></tr>
+      <tr><td><strong>korteri remont Pärnu</strong></td><td class="bad">puudub</td><td class="win">Ehituskutt #1</td></tr>
+      <tr><td>vannitoa remont Pärnu <em>(su põhiteenus!)</em></td><td class="bad">puudub</td><td>Hange.ee, PocketPro, Elfamera, Remfix</td></tr>
+      <tr><td>suvila ehitus Pärnumaa</td><td class="bad">puudub</td><td>Google AI: Pärnumaa Ehitus, Merlang, KT Maja</td></tr>
+      <tr><td>mp ehitustööd <em>(su nimi)</em></td><td class="good">#1</td><td>MP ise — aga kaardil/Mapsis puudub</td></tr>
+    </tbody>
+  </table>
+
+  <p>Lisaks kaks olulist auku, mis tulid välja:</p>
+  <ul>
+    <li><strong>Google Mapsis / ärikaardil sind ei ole</strong> — isegi su enda nime otsides on kaardil teised firmad (Pärnumaa Ehitus, M.P. Trepid, Merff), mitte sina. See tähendab, et <strong>Google'i ettevõtteprofiil on tegemata või kinnitamata.</strong> Suur osa kohalikest klientidest otsibki just kaardilt.</li>
+    <li><strong>Su avalehel ei ole isegi sõna "Pärnu".</strong> Google märgib su lehe juurde "Puuduvad: pärnu" (kasutad ainult "Pärnumaal"). Inimene otsib "...Pärnu", masin ei leia vastet.</li>
+  </ul>
+
+  <!-- ===== TEST 3 ===== -->
+  <h2><span class="num">3.</span>Ehituskutt vs MP — sama äri, vastupidine tulemus</h2>
+  <p>Sa tunned Ehituskutti. Vaatame teid kõrvuti, sest see näitab kõike.</p>
+
+  <table>
+    <thead>
+      <tr><th></th><th>Ehituskutt</th><th>MP Ehitustööd</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Mida teeb</td><td>Korteriremont, plaatimine Pärnus</td><td><strong>Täpselt sama (ja rohkem)</strong></td></tr>
+      <tr><td>Suurus / vanus</td><td>Üks mees, firma asutatud 2022</td><td>10+ a kogemust</td></tr>
+      <tr><td>"korteri remont Pärnu" (Google & Bing)</td><td class="win">#1</td><td class="bad">puudub</td></tr>
+      <tr><td>Avalehe pealkiri</td><td>"Korteri remont ja renoveerimine <strong>Pärnus</strong>"</td><td>"Kvaliteetne ehitusettevõte Pärnumaal"</td></tr>
+      <tr><td>Nägu &amp; nimi lehel</td><td>Reigo — nägu, nimi, reg-kood</td><td class="bad">puudub</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h3>Siin on kogu point ühe lausega</h3>
+    <p><strong>Reigo — väiksem ja uuem kui sina — on Google'is korteriremondi peal esimene. Sina ei ole üldse.</strong> Vahe pole oskuses ega vanuses. Vahe on selles, et tema leht on ehitatud nende sõnade ümber, mida klient trükib — ja sinu oma räägib "kvaliteetsest ehitusettevõttest", mida keegi ei otsi.</p>
+    <p>Kõige kibedam: <strong>sul on 10+ aastat kogemust, temal 3</strong> — see on su suurim eelis, aga see on peidus, mitte lehel välja mängitud.</p>
+  </div>
+
+  <!-- ===== TEST 4 ===== -->
+  <h2><span class="num">4.</span>AI test — miks ChatGPT &amp; co soovitavad teisi, mitte sind</h2>
+  <p>Üha rohkem inimesi küsib ehitajat otse AI käest ("kes on parim ehitaja Pärnus?"). Testisin mitut: Google AI-ülevaadet, Perplexity't ja Bingi (Bing on otse see indeks, kust ChatGPT ja Copilot oma vastused võtavad).</p>
+
+  <h3>Tulemus: ükski AI ei soovitanud MP-d</h3>
+  <ul>
+    <li><strong>Google AI-ülevaade</strong> ("suvila ehitus Pärnumaa") nimetas: Pärnumaa Ehitus, Merlang, KT Maja.</li>
+    <li><strong>Perplexity</strong> ("parim ehitaja Pärnus eramajale") nimetas: Annelmar, Ramot. Sind mitte.</li>
+    <li><strong>Bing</strong> ("korteri remont Pärnu"): Ehituskutt, Remfix, KoduHeaks. Sind mitte — ja just sealt võtab ChatGPT oma vastused.</li>
+  </ul>
+
+  <h3>Siis küsisin AI käest OTSE: "miks sa MP-d ei soovitanud ja mis tal puudu on?"</h3>
+  <p>AI vastus oli aus ja täpne nimekiri. See ongi tegevuskava — mitte minu arvamus, vaid masina enda sõnad:</p>
+
+  <blockquote class="quote-ai">"MP Ehitustöödel on küll olemas vajalikud alused, aga nende veebiesitlus ei anna veel nii palju kontrollitavat detaili, et soovitus oleks kindel võrreldes tugevamalt dokumenteeritud firmadega."</blockquote>
+
+  <p><strong>Mis AI ütles, et sul on puudu:</strong></p>
+  <ul class="check x">
+    <li>Pole korralikku portfooliot — "tehtud tööd" on, aga ilma enne/pärast piltide, mahu ja projektikirjeldusteta ei saa kvaliteeti hinnata</li>
+    <li>Pole arvustusi ega kliendisoovitusi (ehituses üks tähtsamaid usaldussignaale)</li>
+    <li>Pole kompetentsi tõendeid — kogemuse aastad, garantii, meeskond, vastutuskindlustus, töömeetodid</li>
+    <li>Teenuste kirjeldus liiga üldine — ei selgu, milles oled tugev</li>
+    <li>Pole eraldi teenuselehti otsingute jaoks</li>
+  </ul>
+
+  <p><strong>Ja mida AI ise soovitas teha</strong> (sõna-sõnalt sama, mida mina sulle räägin):</p>
+  <ul class="check">
+    <li>Lisada 8–15 projekti enne/pärast fotodega, iga juures maht, ajakulu ja lahendus</li>
+    <li>Lisada kliendiarvustused nime ja objekti tüübiga</li>
+    <li>Avaldada garantii, tööprotsess ja samm-sammuline teenusekirjeldus</li>
+    <li>Lisada meeskond + kogemuse aastad + kvalifikatsioonid</li>
+    <li><strong>"Parandada otsingunähtavust eraldi lehtedega nagu 'eramaja ehitus Pärnus', 'renoveerimine Pärnus', 'vannitoa remont Pärnus'"</strong></li>
+  </ul>
+
+  <!-- ===== MIKS NII ===== -->
+  <h2><span class="num">5.</span>Miks ma seda just nii teen</h2>
+  <p>Ma ei muuda su lehte ümber sellepärast, et see vana välja näeb. Ma muudan seda kahel põhjusel, mis mõlemad tähendavad <strong>raha sisse</strong>:</p>
+
+  <h3>a) Üks pikk leht → mitu teenuselehte</h3>
+  <p>Iga otsing, mille peale tahad tulla, vajab oma lehte. Üks pikk keritav leht räägib Google'ile umbes 3 asjast. Sellepärast oledki nähtamatu kõige peal peale oma nime. Konkurendil KoduHeaks on 12 teenuselehte — sellepärast tulebki tema igal pool ette.</p>
+
+  <h3>b) Kaks lahtist ust, kuhu keegi veel pole jõudnud</h3>
+  <p>Enamik Pärnu firmasid kakleb korteriremondi pärast. Aga kaks väga tulusat otsingut on <strong>peaaegu tühjad</strong> — ükski kohalik firma pole neid endale võtnud:</p>
+  <ul>
+    <li><strong>Suvila ehitus Pärnumaa.</strong> Klient on tihti Tallinna või soome pere, kes ehitab teist kodu mere äärde ega saa ise objekti valvata. Ta tahab <strong>usaldusväärset kohalikku, kes ajab kogu asja ära ja saadab pildiraporti</strong>. Suur eelarve, täislahendus, vähem tingib hinda. Sina <em>teed</em> seda — keegi lihtsalt ei reklaami end nii.</li>
+    <li><strong>Maja restaureerimine Pärnu(s).</strong> Madalaim konkurents üldse — ükski ehitusfirma ei aita Pärnu linna restaureerimistoetusega (kuni 10 000 €). Kõrge marginaal, ekspert-positsioon.</li>
+  </ul>
+  <p>Sina teed neid kõiki — maju, suvilaid, restaureerimist. Praegu ei tea seda keegi peale su olemasolevate klientide. Need lehed teevad sellest otsingu, kust uus premium-klient su üles leiab.</p>
+
+  <!-- ===== AI TEKST ===== -->
+  <h2><span class="num">6.</span>Miks "AI" sõnastus toimib paremini kui käsitsi kirjutatud tekst</h2>
+  <p>Sa ütlesid: <em>"AI-tekst on seal kohe aru saada."</em> Õiglane mure. Aga vaatame seda ausalt, sest siin on paar olulist asja.</p>
+
+  <h3>1. See pole "AI-tekst" — see on sinu päris tööd, kirjutatud nii, et masin ka aru saab</h3>
+  <p>Halb, äratuntav AI-tekst on äratuntav <strong>ühel põhjusel: see on üldsõnaline ja tühi.</strong> "Pakume kvaliteetseid lahendusi pühendumusega." Just see reedab masina. Meie tekst on vastupidine — see ehitatakse <strong>sinu päris projektidele</strong>: "Kolmetoalise korteri täisrenoveerimine Paikusel, 62 m², 6 nädalat, vana köök ja vannituba täielikult uued." Sellist lauset ei oska AI välja mõelda — see tuleb sinult. AI on tööriist, mis paneb su faktid korralikku, leitavasse vormi. Mida konkreetsem ja päris-sem, seda <strong>vähem</strong> näeb välja "AI".</p>
+
+  <h3>2. Käsitsi "südamest" kirjutatud tekst kasutab ehitaja sõnu — mitte kliendi otsisõnu</h3>
+  <p>Kui ehitaja kirjutab ise, kirjutab ta nii nagu tema mõtleb ("teostame kvaliteetset siseviimistlust"). Klient aga trükib Google'isse hoopis "vannitoa plaatija Pärnu" või "korteri remont hind Pärnu". AI-ga optimeeritud sõnastus katab <strong>süsteemselt need sõnad, sünonüümid ja küsimused</strong>, mida inimesed päriselt otsivad. Täpselt sellepärast ongi Ehituskutt #1 — tema pealkiri on kliendi sõnadega, mitte ehitaja omadega.</p>
+
+  <h3>3. AI ja Google loevad struktuuri, mitte ilukõnet</h3>
+  <p>Selged pealkirjad, eraldi teenuselehed, küsimus-vastus plokid, faktid (kogemus, garantii, maht) — neid suudab nii Google kui ChatGPT lugeda ja <strong>edasi soovitada</strong>. Üks pikk ilus jutuvool ei "tõlgu" soovituseks. AI ise ütles seda meile §4-s.</p>
+
+  <div class="callout">
+    <h3>Lõpphäälestus</h3>
+    <p>Küsimus ei ole "AI või käsitsi". Täna on <strong>~70% veebitekstist AI-abiga tehtud</strong> — see on uus normaalsus. Küsimus on: <strong>kas tekst on täpne, konkreetne, sinu nägu ja leitav — või üldsõnaline ja nähtamatu.</strong> Meie hoiame su tooni ja kasutame su päris numbreid ja projekte. AI on lihtsalt see, mis teeb selle täielikuks ja leitavaks. Alternatiiv — õhuke või puuduv sisu — tähendab garanteeritult nähtamatust. See on hullem kui "äkki paistab natuke AI".</p>
+  </div>
+
+  <!-- ===== EDASI ===== -->
+  <h2><span class="num">7.</span>Mida see sinult nõuab (vähe)</h2>
+  <p>Sa ei kirjuta ise midagi ja kujundus jääb samaks. Mul on vaja sinult ainult <strong>toorfakte paari projekti kohta</strong> — punktidena, ilus ei pea olema:</p>
+  <ul class="check">
+    <li>3–4 tehtud tööd: mis tehti, kus (piirkond piisab), kui suur, kui kaua, mis aastal, mille üle klient rahul oli</li>
+    <li>Eriti väärtuslik: <strong>korduvkliendid</strong> (kellele oled mitu tööd teinud) — see on tugevam kui ükski arvustus</li>
+    <li>Paar uut pilti (eriti suvila ja uus maja, mida lehel veel pole)</li>
+    <li>Kas 1–2 klienti annaks lühikese tagasiside (paar lauset)</li>
+  </ul>
+  <p>Ülejäänu — teenuselehed, Google'i ärikaart, kogemuse ja garantii välja toomine, otsingusõnad — teen mina.</p>
+
+  <footer>
+    <p><strong>Metoodika:</strong> kõik otsingud tehti 29.06.2026 Eesti asukohaga ja isikupärastamine välja lülitatud (nii nagu näeb võõras klient, mitte sina või mina sisse logituna). Liiklusandmed: Google Search Console (mpehitus.ee). AI-testid: Google AI-ülevaade, Perplexity, Bing — kõik välja logitud. Numbrid on hetkeseis ja muutuvad pärast lehe parandusi — see ongi eesmärk.</p>
+    <p>Sisedokument · MP Ehitustööd · ei avaldata veebis (noindex).</p>
+  </footer>
+
+</div>
+</body>
+</html>
